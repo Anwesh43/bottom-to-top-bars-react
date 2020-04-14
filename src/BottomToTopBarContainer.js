@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useAnimatedScale, useDimension} from './hooks'
 import BottomToTopBar from './BottomToTopBar'
 const getBottomToTopBars = (n, w, h, scale) => {
@@ -11,6 +11,10 @@ const getBottomToTopBars = (n, w, h, scale) => {
 const BottomToTopBarContainer = ({n}) => {
     const {scale, start} = useAnimatedScale(0.02 / n, 30)
     const {w, h, resize, disableResizing} = useDimension()
+    useEffect(() => {
+        resize()
+        return disableResizing
+    })
     return (<div onClick = {start}>
             {getBottomToTopBars(n, w, h, scale)}
         </div>)
