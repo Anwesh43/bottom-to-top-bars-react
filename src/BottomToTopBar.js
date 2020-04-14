@@ -1,5 +1,5 @@
 import React from 'react'
-import {divideScale, sinify} from 'react'
+import {divideScale, sinify} from './util'
 
 const btnHFactor = 0.2
 
@@ -25,7 +25,7 @@ const BottomToTopBar = ({w, h, i, n, scale}) => {
     const sc = divideScale(sinify(scale), i, n)
     const gap = totalSizeFactor * w / n
     const offsetX = offsetFactor * w
-    return <div style = {bottomToTopBarStyle(gap, offsetX, h, scale, i)}></div>
+    return <div style = {bottomToTopBarStyle(gap, offsetX, h, sc, i)}></div>
 }
 
-export default BottomToTopBar 
+export default BottomToTopBar

@@ -1,6 +1,7 @@
+import {useState} from 'react'
 export const useAnimatedScale = (scGap, delay) => {
     const [scale, setScale] = useState(0)
-    const [amimated, setAnimated] = useState(false)
+    const [animated, setAnimated] = useState(false)
     return {
         scale,
         start() {
@@ -35,7 +36,7 @@ export const useDimension = () => {
         },
         disableResizing() {
             window.onresize = () => {
-                
+
             }
         }
     }
